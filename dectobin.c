@@ -45,9 +45,17 @@ int main(int argc, char **argv)
         exit(1);
     }
 
-    double dec = strtod(argv[1], NULL);
+    int dec = strtol(argv[1], NULL, 10);
     char* love = malloc(LEN);
     assert(love != NULL);
+
+		if(dec > 65535){
+        printf("%s\n", "Integer too large");
+        exit(1);
+    }
+    else if(dec < 0){
+        printf("%s\n", "Integer too small");
+    }
     getBin(dec, love);
     printBin(love);
     free(love);
