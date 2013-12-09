@@ -1,4 +1,8 @@
-/*Converts decimal numbers to binary*/
+/*************************************/
+/*Converts decimal numbers to binary */
+/*Works for integers up to 2**16-1   */
+/*************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
