@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     char love[LEN];
     assert(love != NULL);
 
-		if(dec > 65535){
+    if(dec > 65535){
         printf("%s\n", "Integer too large");
         exit(1);
     }
