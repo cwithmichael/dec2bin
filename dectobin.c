@@ -55,10 +55,6 @@ int main(int argc, char **argv)
         printf("%s\n", "Integer too large");
         exit(1);
     }
-    else if(dec < 0){
-        printf("%s\n", "Integer too small");
-        exit(1);
-    }
     getBin(dec, love);
     printBin(love);
 }
