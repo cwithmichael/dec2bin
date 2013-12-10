@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     assert(love != NULL);
 
     if(dec > MAX){
-        printf("%s\n", "Integer too large");
+        printf("%s\n", "Integer is out of range");
         exit(1);
     }
     getBin(dec, love);
