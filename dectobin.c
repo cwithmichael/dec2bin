@@ -49,7 +49,6 @@ int main(int argc, char **argv)
     const unsigned long int MAX = pow(2, LEN) - 1;
     unsigned long int dec = strtol(argv[1], NULL, 10);
     char love[LEN];
-    assert(love != NULL);
 
     if(dec > MAX){
         printf("%s\n", "Integer is out of range");
