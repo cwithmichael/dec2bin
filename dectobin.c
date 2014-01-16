@@ -10,7 +10,7 @@
 #include <limits.h>
 #define LEN 64 
 
-void getBin(long long num, char *str)
+void getBin(long long num)
 {
 	long long MASK = 0x8000000000000000;
 	int idx;
@@ -37,10 +37,11 @@ int main(int argc, char **argv)
 
     const long long MAX = LLONG_MAX;
     const long long dec = strtoll(argv[1], NULL, 10);
-    char love[LEN];
+
     if(dec > MAX){
         printf("%s\n", "Integer is out of range");
         exit(1);
     }
-    getBin(dec, love);
+
+    getBin(dec);
 }
