@@ -1,38 +1,27 @@
 /*************************************/
 /*Converts decimal numbers to binary */
-/*Works for integers up to 2**32-1   */
+/*Works for integers up to 2**64-1   */
 /*************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
 #include <math.h>
-#define LEN 32 
+#include <limits.h>
+#define LEN 64 
 
-void getBin(int num, char *str)
+void getBin(long long num, char *str)
 {
-    *(str+LEN-1) = '\0';
-    long int mask = pow(2, LEN);
-    while(mask >>= 1)
-        *str++ = !!(mask & num) + '0';
+	long long MASK = 0x8000000000000000;
+	int idx;
+	long long bit;
+	for(idx = 0; idx < LEN; idx++){
+		long long bit = num & MASK;	
+		printf("%lld", bit/MASK);
+		num <<= 1;
+	}
+	printf("\n");
 }
-
-void printBin(char *str)
-{
-    int i = 0;
-    for(i=0; i<LEN; i++){
-        if(str[i] != '1')
-            str[i] = '0';
-    }
-
-    for(i=0; i<LEN; i++){
-        if( i > 0 && (i % 8) == 0)
-            printf(" ");
-        printf("%c", str[i]);
-    }
-
-    printf("\n");
-} 
 
 void printUsage(char* progName)
 {
@@ -46,14 +35,12 @@ int main(int argc, char **argv)
         exit(1);
     }
 
-    const unsigned long int MAX = pow(2, LEN) - 1;
-    unsigned long int dec = strtol(argv[1], NULL, 10);
+    const long long MAX = LLONG_MAX;
+    const long long dec = strtol(argv[1], NULL, 10);
     char love[LEN];
-
     if(dec > MAX){
         printf("%s\n", "Integer is out of range");
         exit(1);
     }
     getBin(dec, love);
-    printBin(love);
 }
