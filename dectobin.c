@@ -36,7 +36,7 @@ int main(int argc, char **argv)
     }
 
     const long long MAX = LLONG_MAX;
-    const long long dec = strtol(argv[1], NULL, 10);
+    const long long dec = strtoll(argv[1], NULL, 10);
     char love[LEN];
     if(dec > MAX){
         printf("%s\n", "Integer is out of range");
