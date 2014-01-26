@@ -50,5 +50,5 @@ int main(int argc, char **argv)
 
 	printf("Input: %llu\n", dec);
 	printf("%s\n", "Output: ");
-    getBin(dec);
+	getBin(dec);
 }
