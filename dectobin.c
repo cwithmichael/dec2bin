@@ -44,11 +44,11 @@ int main(int argc, char **argv)
 
     if(errno == ERANGE){
         printf("%s\n", "Integer is out of range");
-		printf("The largest integer allowed on this system is : %llu\n", MAX);
+	    printf("The largest integer allowed on this system is : %llu\n", MAX);
         exit(1);
     }
 
-	printf("Input: %llu\n", dec);
-	printf("%s\n", "Output: ");
-	getBin(dec);
+    printf("Input: %llu\n", dec);
+    printf("%s\n", "Output: ");
+    getBin(dec);
 }
