@@ -15,7 +15,7 @@ void getBin(unsigned long long int num)
 {
 	unsigned long long int MASK = 0x8000000000000000;
 	int idx;
-	unsigned long long int bit;
+
 	for(idx = 0; idx < LEN; idx++){
 		unsigned long long int bit = num & MASK;	
 		printf("%llu", bit/MASK);
@@ -52,4 +52,6 @@ int main(int argc, char **argv)
     printf("Input: %llu\n", dec);
     printf("%s\n", "Output: ");
     getBin(dec);
+
+		return 0;
 }
