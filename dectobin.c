@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 {
     if(argc != 2){
         printUsage(argv[0]);
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 	  char *input = argv[1];
 		char *check_if_invalid;
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
     if(errno == ERANGE || input == check_if_invalid ){
         printf("%s\n", "Integer is out of range");
 	      printf("The largest integer allowed on this system is : %llu\n", MAX);
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 	 
     printf("Input: %llu\n", dec);
